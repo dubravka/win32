@@ -32,13 +32,13 @@ CredSSP delegation must be enabled in the client settings and in the service set
 
     The following command demonstrates how to use the winrm utility to enable CredSSP on the WinRM client:
 
-    **winrm set winrm/config/client/auth @{CredSSP="true"}**
+    **winrm set winrm/config/client/auth '@{CredSSP="true"}'**
 
 2.  CredSSP must be enabled in the WinRM service configuration settings. This flag can be enabled manually or through a Group Policy setting. The default setting is **False**. The **Allow CredSSP authentication** policy is located at the following path: Computer Configuration\\Administrative template\\Windows Components\\Windows Remote Management (WinRM)\\WinRM Service.
 
     The following command demonstrates how to use the winrm utility to enable CredSSP on the WinRM service:
 
-    **winrm set winrm/config/service/auth @{CredSSP="true"}**
+    **winrm set winrm/config/service/auth '@{CredSSP="true"}'**
 
 3.  The Allow Delegating Fresh Credentials (**AllowFreshCredentials**) policy setting must be enabled on the WinRM client, and a Service Principal Name (SPN) with the WSMAN prefix must be added to the policy. The SPN represents the target computer to which the user credentials can be delegated. The SPN can be set to one or more computers. The following table contains examples of valid formats for SPNs.
 
